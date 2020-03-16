@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+  phpfpm:
+    image: matricali/phalcon:3.4-php7.3-stretch-fpm
+    volumes:
+      - .:/var/www/html
+
+  nginx:
+    image: nginx:latest
+    links:
+      - phpfpm
+    volumes:
+      - ./public:/var/www/html/public
+      - ./nginx-virtualhost.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
