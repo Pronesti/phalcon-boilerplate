@@ -4,7 +4,6 @@ use Phalcon\Di\FactoryDefault;
 use Phalcon\Loader;
 use Phalcon\Mvc\Application;
 use Phalcon\Mvc\View;
-use Phalcon\Url;
 
 // Define some absolute path constants to aid in locating resources
 define('BASE_PATH', dirname(__DIR__));
@@ -37,7 +36,7 @@ $container->set(
 $container->set(
     'url',
     function () {
-        $url = new Url();
+        $url = new Phalcon\Mvc\Url();
         $url->setBaseUri('/');
 
         return $url;
