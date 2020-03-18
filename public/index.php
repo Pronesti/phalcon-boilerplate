@@ -1,5 +1,6 @@
 <?php
 
+use Phalcon\Db\Adapter\Pdo\Mysql;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Loader;
 use Phalcon\Mvc\Application;
@@ -40,6 +41,20 @@ $container->set(
         $url->setBaseUri('/');
 
         return $url;
+    }
+);
+
+$container->set(
+    'db',
+    function () {
+        return new Mysql(
+            [
+                'host' => '172.22.0.5',
+                'username' => 'root',
+                'password' => 'root',
+                'dbname' => 'users',
+            ]
+        );
     }
 );
 
