@@ -49,7 +49,7 @@ $container->set(
     function () {
         return new Mysql(
             [
-                'host' => '172.22.0.2',
+                'host' => 'db',
                 'username' => 'root',
                 'password' => 'root',
                 'dbname' => 'users',

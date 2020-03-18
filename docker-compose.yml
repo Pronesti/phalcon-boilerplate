@@ -11,6 +11,7 @@ services:
     image: nginx:latest
     links:
       - phpfpm
+      - db
     volumes:
       - ./public:/var/www/html/public
       - ./nginx-virtualhost.conf:/etc/nginx/conf.d/default.conf
