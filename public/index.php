@@ -53,6 +53,7 @@ $container->set(
                 'username' => 'root',
                 'password' => 'root',
                 'dbname' => 'users',
+                'port' => '3306',
             ]
         );
     }
